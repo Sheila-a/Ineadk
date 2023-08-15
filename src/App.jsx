@@ -8,9 +8,9 @@ import CompanySignUp from './pages/Signup/CompanyS';
 import Dashboard from './pages/Dashboard/Freelancer/Home/Dashboard';
 import Footer from './components/Footer/Footer';
 import Project from './pages/Dashboard/Freelancer/Projects/Project';
-import Message from './pages/Dashboard/Freelancer/Message/Message';
+import Message from './pages/Dashboard/Freelancer/Support/Support';
 import Profile from './pages/Dashboard/Freelancer/Profile/Profile';
-import Support from './pages/Dashboard/Freelancer/Support/Support';
+import Support from './pages/Dashboard/Freelancer/Messages/Support';
 import Earnings from './pages/Dashboard/Freelancer/Earnings/Earnings';
 import Settings from './pages/Dashboard/Freelancer/Settings/Settings';
 import SearchResults from './pages/Search/SearchResults';
@@ -20,7 +20,8 @@ import JobSearchResults from './pages/Search/JobSearchResults';
 import { useEffect } from 'react';
 import Jobs from './pages/Dashboard/Company/Jobs/Jobs';
 import FreelanceSearchResults from './pages/Search/FreelanceSearchResults';
-import Message2 from './pages/Dashboard/Company/Message/Message';
+import Message2 from './pages/Dashboard/Company/Support/Support';
+import PrivateRoutes from './routes/PrivateRoutes';
 
 function App() {
   const { role } = useRole();
@@ -41,8 +42,8 @@ function App() {
         <Route path='/signup/freelancer' element={<FreelancerSignUp />} />
         <Route path='/signup/company' element={<CompanySignUp />} />
         {/* FREELANCER */}
+        {/* <Route path='/' element={<PrivateRoutes />}> */}
         <Route path='/freelancer/dashboard' element={<Dashboard />} />
-
         {/* <Route
           path={`/${role}dashboard`} // Renders the appropriate dashboard based on the role
           element={role === 'freelancer' ? <Dashboard /> : <Dashboard2 />}
@@ -52,20 +53,19 @@ function App() {
           path='/search/jobs'
           element={<JobSearchResults searchQuery={searchQuery} />}
         />
+        <Route path='/freelancer/support' element={<Message />} />
+        <Route path='/freelancer/profile' element={<Profile />} />
+        <Route path='/earnings' element={<Earnings />} />
+        <Route path='/freelancer/settings' element={<Settings />} />
+        {/* CLIENT */}
+        <Route path='/company/dashboard' element={<Dashboard2 />} />
+        <Route path='/jobs' element={<Jobs />} />
+        <Route path='/company/support' element={<Message2 />} />{' '}
         <Route
           path='/search/freelancers'
           element={<FreelanceSearchResults searchQuery={searchQuery} />}
         />
-        <Route path='/freelancer/message' element={<Message />} />
-        <Route path='/freelancer/profile' element={<Profile />} />
-        <Route path='/freelancer/support' element={<Support />} />
-        <Route path='/earnings' element={<Earnings />} />
-        <Route path='/freelancer/settings' element={<Settings />} />
-
-        {/* CLIENT */}
-        <Route path='/client/dashboard' element={<Dashboard2 />} />
-        <Route path='/jobs' element={<Jobs />} />
-        <Route path='/client/message' element={<Message2 />} />
+        {/* </Route> */}
       </Routes>
       <Footer />
     </>

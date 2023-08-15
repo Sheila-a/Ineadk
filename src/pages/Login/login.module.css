@@ -7,9 +7,8 @@
 
 .login_container {
   border: 1px solid #ffffff57;
-  /* margin: auto 30vw; */
-  padding: 40px;
-  text-align: center;
+  padding: 15px 40px;
+  /* text-align: center; */
   border-radius: 10px;
   width: 40vw;
   color: #e6e6eb;
@@ -20,7 +19,7 @@
   color: #fff;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 30px;
+  /* margin-bottom: 20px; */
 }
 
 .login_container span {
@@ -30,8 +29,14 @@
   -webkit-background-clip: text;
 }
 
+.welcomeBack {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .first_p {
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
+  font-size: 12px;
 }
 
 .login_container a {
@@ -48,6 +53,47 @@
 .login_bottom {
   display: flex;
   justify-content: space-evenly;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input[type='text'],
+.form input[type='password'],
+.form input[type='email'] {
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 15px;
+  border: 2px solid #fff;
+}
+
+.form input:focus {
+  border: 2px solid #ff9800;
+}
+
+.password_input_container {
+  position: relative; /* Required for absolute positioning */
+}
+
+.password_toggle {
+  position: absolute;
+  top: 40%; /* Vertically center the icon */
+  right: 10px; /* Adjust this value as needed */
+  transform: translateY(-50%); /* Center the icon vertically */
+  cursor: pointer;
+}
+
+.login_checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.login_checkbox input {
+  margin-right: 5px;
 }
 
 @media (max-width: 1000px) {

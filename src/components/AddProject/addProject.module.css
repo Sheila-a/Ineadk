@@ -1,0 +1,19 @@
+.AddProject {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff9800;
+  border-radius: 5px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.AddProject p {
+  font-size: 25px;
+}
+
+.AddProject:hover {
+  color: #ff9800;
+  background: #fff;
+  transition: 0.4s ease;
+}

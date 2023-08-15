@@ -65,7 +65,7 @@ const Dashboard2 = () => {
           freelancers, and effortlessly track your project progress and
           payments. We are excited to partner with you in making every project a
           triumph. Lets work together to achieve your goals!'
-            btn='New Proposal'
+            btn='New Job'
           />
 
           <div className={design.dash_cards}>

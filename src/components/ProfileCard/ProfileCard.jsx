@@ -5,14 +5,26 @@ import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
+import { useRole } from '../../context/RoleContext';
+import { useEffect, useState } from 'react';
 
 const ProfileCard = () => {
+  const { user } = useRole();
+
   const isSmallView = window.innerWidth <= 725;
   return (
     <div className={design.ProfileCard}>
       <img src='https://randomuser.me/api/portraits/women/56.jpg' />
       <div>
-        <h2>Sonya Sesychelle</h2>
+        {' '}
+        {/* {storedUser ? (
+          <p>
+            Hello, {storedUser.name} ({storedUser.role})!
+          </p>
+        ) : (
+          <p>Loading user details...</p>
+        )} */}
+        <h2>{`  ${user.firstName} ${user.lastName} `}</h2>
         <div className={design.ProfileCard_upper}>
           <div className={design.ProfileCard_upper_inner}>
             <WorkOutlineOutlinedIcon
@@ -41,7 +53,8 @@ const ProfileCard = () => {
           <div className={design.ProfileCard_lower_inner}>
             <MailOutlinedIcon style={{ marginRight: '7px' }} />
             <p>
-              <span>Email:</span>hjkuhigye@gmail.com
+              <span>Email:</span>
+              {user.email}
             </p>
           </div>
           <div className={design.ProfileCard_lower_inner}>

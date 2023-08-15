@@ -1,12 +1,13 @@
 import design from './dashNav.module.css';
-
+import { useRole } from '../../context/RoleContext';
 const DashNav = ({ title, name }) => {
+  const { user } = useRole();
   return (
     <div className={design.DashNav}>
       <div className={design.DashNav_inner}>
         <h1>{title}</h1>
         <div>
-          <img src='https://randomuser.me/api/portraits/women/76.jpg' />
+          <img src={user.avatarUrl} />
           <p>{name}</p>
         </div>
       </div>

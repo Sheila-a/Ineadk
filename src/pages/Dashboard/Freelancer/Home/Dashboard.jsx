@@ -13,44 +13,13 @@ import DashNav from '../../../../components/DashNav/DashNav';
 import { useState } from 'react';
 import DashIntro from '../../../../components/DashIntro/DashIntro';
 import Search from '../../../../components/Search/Search';
+import { useRole } from '../../../../context/RoleContext';
 
 const Dashboard = () => {
   const location = useLocation();
+  const { user } = useRole();
   const queryParams = new URLSearchParams(location.search);
   const userAddress = queryParams.get('address');
-
-  // const handleSearchTypeChange = (event) => {
-  //   setSearchType(event.target.value);
-  //   // onSearchTypeChange(event.target.value); // Call the prop function
-  // };
-
-  //   const handleDisconnectMetaMask = async () => {
-  //     try {
-  //       if (window.ethereum) {
-  //         await window.ethereum.request({
-  //           method: 'wallet_requestPermissions',
-  //           params: [{ eth_accounts: {} }],
-  //         });
-  //         const permissions = await window.ethereum.request({
-  //           method: 'wallet_getPermissions',
-  //         });
-
-  //         if (
-  //           permissions.find(
-  //             (permission) => permission.parentCapability === 'eth_accounts'
-  //           )
-  //         ) {
-  //           await window.ethereum.request({
-  //             method: 'wallet_removePermissions',
-  //             params: [{ eth_accounts: {} }],
-  //           });
-  //           navigate('/login');
-  //         }
-  //       }
-  //     } catch (error) {
-  //       alert('Error disconnecting from the Ethereum wallet');
-  //     }
-  //   };
 
   return (
     <div className={design.dashboard}>
@@ -60,7 +29,7 @@ const Dashboard = () => {
           <DashNav title='HOME' name={userAddress} />
           <Search placeholder='Search for jobs...' path='jobs' />
           <DashIntro
-            title='Hello Deran'
+            title={`Hello ${user.firstName} ${user.lastName} `}
             text=' Welcome! Find everything you need to manage your freelance career and
         stay organized. Check out your latest projects, connect with clients,
         and keep track of your earnings all in one place. Were thrilled to have

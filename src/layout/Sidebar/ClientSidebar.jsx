@@ -56,15 +56,15 @@ const Sidebar = () => {
 
   // update activeItem based on current location
   useEffect(() => {
-    if (location.pathname === '/client/dashboard') {
+    if (location.pathname === '/company/dashboard') {
       setActiveItem('dashboard');
     } else if (location.pathname === '/jobs') {
       setActiveItem('jobs');
-    } else if (location.pathname === '/client/message') {
+    } else if (location.pathname === '/company/message') {
       setActiveItem('message');
     } else if (location.pathname === '/profile') {
       setActiveItem('profile');
-    } else if (location.pathname === '/support') {
+    } else if (location.pathname === '/company/support') {
       setActiveItem('support');
     } else if (location.pathname === '/payments') {
       setActiveItem('payments');
@@ -132,7 +132,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/client/dashboard'
+              to='/company/dashboard'
               style={activeItem === 'dashboard' ? activeLinkStyle : {}}
             >
               {' '}
@@ -163,7 +163,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/client/message'
+              to='/company/message'
               style={activeItem === 'message' ? activeLinkStyle : {}}
             >
               <div className={design.Sidebar_tabs_inner}>
@@ -177,7 +177,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/client/profile'
+              to='/company/profile'
               style={activeItem === 'profile' ? activeLinkStyle : {}}
             >
               <div className={design.Sidebar_tabs_inner}>
@@ -191,7 +191,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/client/support'
+              to='/company/support'
               style={activeItem === 'support' ? activeLinkStyle2 : {}}
             >
               <div className={design.Sidebar_tabs_inner}>
@@ -219,7 +219,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/client/settings'
+              to='/company/settings'
               style={activeItem === 'settings' ? activeLinkStyle2 : {}}
             >
               <div className={design.Sidebar_tabs_inner}>

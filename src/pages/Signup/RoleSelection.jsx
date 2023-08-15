@@ -8,6 +8,7 @@ const RoleSelection = () => {
   const { setRole } = useRole();
 
   const handleRoleSelection = (role) => {
+    console.log('Selected Role:', role);
     setRole(role);
     if (role === 'freelancer') {
       navigate('/signup/freelancer');

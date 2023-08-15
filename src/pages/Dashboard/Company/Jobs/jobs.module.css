@@ -1,0 +1,18 @@
+.project_body {
+  display: flex;
+  color: #fff;
+}
+
+.project_main {
+  padding: 0px 0 50px 0px;
+  flex-grow: 1;
+  width: 80%;
+  background: linear-gradient(to bottom right, #671ae4 20%, #181e41 90%);
+}
+
+.job_flex {
+  margin: 20px 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
