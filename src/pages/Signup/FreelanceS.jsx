@@ -19,8 +19,8 @@ const SIGNUP_URL = 'https://freelance-h6b1.onrender.com/api/v1/users/';
 const FreelancerSignUp = () => {
   const { role } = useRole();
   const [selectedRole, setSelectedRole] = useState(role);
+  // console.log('Role in FreelancerSignUp:', selectedRole);
 
-  console.log('Role in FreelancerSignUp:', selectedRole);
   const userRef = useRef();
   const errRef = useRef();
   const navigate = useNavigate();
@@ -29,8 +29,6 @@ const FreelancerSignUp = () => {
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
 
-  // const [userName, setUserName] = useState('');
-  // const [validUserName, setValidUserName] = useState(false);
   const [firstName, setFirstName] = useState('');
   const [validFirstName, setValidFirstName] = useState(false);
   const [firstNameFocus, setFirstNameFocus] = useState(false);
@@ -54,10 +52,6 @@ const FreelancerSignUp = () => {
   useEffect(() => {
     setValidFirstName(USERNAME_REGEX.test(firstName));
   }, [firstName]);
-
-  // useEffect(() => {
-  //   setValidUserName(USERNAME_REGEX.test(userName));
-  // }, [userName]);
 
   useEffect(() => {
     setValidLastName(USERNAME_REGEX.test(lastName));
@@ -96,7 +90,6 @@ const FreelancerSignUp = () => {
           email,
           password,
           role: selectedRole,
-          // userName,
         }),
         {
           headers: { 'Content-Type': 'application/json' },
@@ -217,30 +210,7 @@ const FreelancerSignUp = () => {
           >
             <InfoIcon />4 to 24 characters. Must begin with a letter.
           </p>
-          {/* <>
-            <label className={design.input_label} htmlFor='username'>
-              Username
-              <CheckIcon
-                className={validUserName ? design.valid : design.hide}
-              />
-              <CloseOutlinedIcon
-                className={
-                  validUserName || !lastName ? design.hide : design.invalid
-                }
-              />
-            </label>
-            <input
-              type='text'
-              id='username'
-              autoComplete='off'
-              onChange={(e) => setUserName(e.target.value)}
-              required
-              aria-invalid={validLastName ? 'false' : 'true'}
-              aria-describedby='uidnote'
-              value={userName}
-              placeholder='Enter username'
-            />
-          </> */}
+
           <>
             <label className={design.input_label} htmlFor='email'>
               Email

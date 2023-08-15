@@ -66,6 +66,7 @@
 .form input {
   padding: 8px;
   border-radius: 5px;
+  font-size: 15px;
   outline: none;
   margin-bottom: 15px;
   border: 2px solid #fff;
@@ -79,6 +80,10 @@
   display: flex;
   gap: 10px;
   text-align: left;
+}
+
+.flexa div {
+  flex: 1;
 }
 
 .flexa input {
