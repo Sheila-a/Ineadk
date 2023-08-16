@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import SearchResultsRow from './SearchResultRow';
 import Nav from '../../components/Navbar/Nav';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 const FreelanceSearchResults = ({ searchQuery }) => {
@@ -21,6 +22,7 @@ const FreelanceSearchResults = ({ searchQuery }) => {
         }
 
         const data = await response.json();
+        // console.log(data);
 
         const filtered = data.filter((job) =>
           job.role.toLowerCase().includes(searchQuery.toLowerCase())
@@ -64,6 +66,7 @@ const FreelanceSearchResults = ({ searchQuery }) => {
           {filteredFreelancers.map((result) => (
             <SearchResultsRow
               signature='freelance'
+              id={result.id}
               key={result.id}
               img={result.profilePicture}
               rating={result.totalRating}
@@ -78,6 +81,10 @@ const FreelanceSearchResults = ({ searchQuery }) => {
       </div>
     </div>
   );
+};
+
+FreelanceSearchResults.propTypes = {
+  searchQuery: PropTypes.string,
 };
 
 export default FreelanceSearchResults;

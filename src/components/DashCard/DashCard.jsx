@@ -26,8 +26,8 @@ DashCard.propTypes = {
   value: PropTypes.string,
   title: PropTypes.string,
   number: PropTypes.string,
-  icons: PropTypes.object,
-  className: PropTypes.object,
+  icons: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default DashCard;

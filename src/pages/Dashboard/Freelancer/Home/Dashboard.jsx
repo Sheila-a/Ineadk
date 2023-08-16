@@ -16,17 +16,17 @@ import Search from '../../../../components/Search/Search';
 import { useRole } from '../../../../context/RoleContext';
 
 const Dashboard = () => {
-  const location = useLocation();
   const { user } = useRole();
-  const queryParams = new URLSearchParams(location.search);
-  const userAddress = queryParams.get('address');
+  // const location = useLocation();
+  // const queryParams = new URLSearchParams(location.search);
+  // const userAddress = queryParams.get('address');
 
   return (
     <div className={design.dashboard}>
       <div className={design.dashboard_body}>
         <Sidebar />
         <div className={design.dashboard_main}>
-          <DashNav title='HOME' name={userAddress} />
+          <DashNav title='HOME' />
           <Search placeholder='Search for jobs...' path='jobs' />
           <DashIntro
             title={`Hello ${user.firstName} ${user.lastName} `}

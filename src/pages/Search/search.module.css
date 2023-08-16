@@ -5,6 +5,10 @@
   border-radius: 7px;
   padding: 20px;
 }
+.Search_row a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .FreeRow {
   display: flex;

@@ -253,9 +253,9 @@ const Login = () => {
                 onClick={togglePasswordVisibility}
               >
                 {showPassword ? (
-                  <VisibilityOffIcon sx={{ color: '#ff9800' }} />
-                ) : (
                   <RemoveRedEyeIcon sx={{ color: '#ff9800' }} />
+                ) : (
+                  <VisibilityOffIcon sx={{ color: '#ff9800' }} />
                 )}
               </span>
             </div>

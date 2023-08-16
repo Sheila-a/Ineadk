@@ -65,6 +65,7 @@ function App() {
           path='/search/freelancers'
           element={<FreelanceSearchResults searchQuery={searchQuery} />}
         />
+        <Route path='/user-details/:id' element={<FreelanceSearchResults />} />
         {/* </Route> */}
       </Routes>
       <Footer />

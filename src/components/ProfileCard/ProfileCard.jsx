@@ -8,13 +8,13 @@ import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import { useRole } from '../../context/RoleContext';
 import { useEffect, useState } from 'react';
 
-const ProfileCard = () => {
+const ProfileCard = ({ currentAddress }) => {
   const { user } = useRole();
 
   const isSmallView = window.innerWidth <= 725;
   return (
     <div className={design.ProfileCard}>
-      <img src='https://randomuser.me/api/portraits/women/56.jpg' />
+      <img src={user.avatarUrl} />
       <div>
         {' '}
         {/* {storedUser ? (
@@ -40,7 +40,7 @@ const ProfileCard = () => {
                 marginLeft: isSmallView ? '10px' : '0',
               }}
             />
-            <p>Enugu, Nigeria</p>
+            <p> {currentAddress}</p>
           </div>
         </div>
         <div>
@@ -60,7 +60,8 @@ const ProfileCard = () => {
           <div className={design.ProfileCard_lower_inner}>
             <LanguageOutlinedIcon style={{ marginRight: '7px' }} />
             <p>
-              <span>Website:</span>sesychelle.com
+              <span>Website:</span>
+              {`${user.firstName}${user.lastName}`}.com
             </p>
           </div>
         </div>

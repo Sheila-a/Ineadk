@@ -6,6 +6,22 @@ import Sidebar from '../../../../layout/Sidebar/FreeSidebar';
 import design from './profile.module.css';
 
 const Profile = () => {
+  const locations = {
+    California: ['Los Angeles', 'San Francisco', 'San Diego'],
+    'New York': ['New York City', 'Buffalo', 'Rochester'],
+    Texas: ['Houston', 'Austin', 'Dallas'],
+    Florida: ['Miami', 'Orlando', 'Tampa'],
+    Illinois: ['Chicago', 'Springfield', 'Peoria'],
+  };
+
+  function getRandomItem(array) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+  }
+
+  const randomState = getRandomItem(Object.keys(locations));
+  const randomCity = getRandomItem(locations[randomState]);
+  const currentAddress = `${randomCity}, ${randomState}`;
   return (
     <div className={design.projects}>
       <div className={design.project_body}>
@@ -13,9 +29,9 @@ const Profile = () => {
         <div className={design.project_main}>
           <DashNav title='PROFILE' />
           <div className={design.Profile_inner}>
-            <ProfileCard />
+            <ProfileCard currentAddress={currentAddress} />
             <ProfileData />
-            <ProfileContact />
+            <ProfileContact currentAddress={currentAddress} />
           </div>
         </div>
       </div>

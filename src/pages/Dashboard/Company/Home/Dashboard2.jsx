@@ -16,40 +16,15 @@ import Deadline from '../../../../components/Deadline/Deadline';
 import DashNav from '../../../../components/DashNav/DashNav';
 import Search from '../../../../components/Search/Search';
 import DashIntro from '../../../../components/DashIntro/DashIntro';
+import { useRole } from '../../../../context/RoleContext';
 
 const Dashboard2 = () => {
   //   const navigate = useNavigate();
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const userAddress = queryParams.get('address');
+  const { user } = useRole();
 
-  //   const handleDisconnectMetaMask = async () => {
-  //     try {
-  //       if (window.ethereum) {
-  //         await window.ethereum.request({
-  //           method: 'wallet_requestPermissions',
-  //           params: [{ eth_accounts: {} }],
-  //         });
-  //         const permissions = await window.ethereum.request({
-  //           method: 'wallet_getPermissions',
-  //         });
-
-  //         if (
-  //           permissions.find(
-  //             (permission) => permission.parentCapability === 'eth_accounts'
-  //           )
-  //         ) {
-  //           await window.ethereum.request({
-  //             method: 'wallet_removePermissions',
-  //             params: [{ eth_accounts: {} }],
-  //           });
-  //           navigate('/login');
-  //         }
-  //       }
-  //     } catch (error) {
-  //       alert('Error disconnecting from the Ethereum wallet');
-  //     }
-  //   };
+  // const location = useLocation();
+  // const queryParams = new URLSearchParams(location.search);
+  // const userAddress = queryParams.get('address');
 
   return (
     <div className={design.dashboard}>
@@ -59,7 +34,7 @@ const Dashboard2 = () => {
           <DashNav title='HOME' />
           <Search placeholder='Search for freelancers...' path='freelancers' />
           <DashIntro
-            title='Hello Stacey'
+            title={`Hello ${user.firstName} ${user.lastName} `}
             text=' Welcome to GIGNexus! Your hub for seamless project management and
           collaboration. Explore your ongoing projects, connect with talented
           freelancers, and effortlessly track your project progress and
