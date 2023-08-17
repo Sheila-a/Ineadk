@@ -1,5 +1,3 @@
-// Dashboard.js
-import { useLocation } from 'react-router-dom';
 import design from './dashboard.module.css';
 import Sidebar from '../../../../layout/Sidebar/FreeSidebar';
 import DashCard from '../../../../components/DashCard/DashCard';

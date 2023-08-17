@@ -58,7 +58,7 @@ const Sidebar = () => {
   useEffect(() => {
     if (location.pathname === '/freelancer/dashboard') {
       setActiveItem('dashboard');
-    } else if (location.pathname === '/projects') {
+    } else if (location.pathname === '/freelancer/projects') {
       setActiveItem('projects');
     } else if (location.pathname === '/freelancer/message') {
       setActiveItem('message');
@@ -66,7 +66,7 @@ const Sidebar = () => {
       setActiveItem('profile');
     } else if (location.pathname === '/freelancer/support') {
       setActiveItem('support');
-    } else if (location.pathname === '/earnings') {
+    } else if (location.pathname === '/freelancer/earnings') {
       setActiveItem('earnings');
     } else if (location.pathname === '/freelancer/settings') {
       setActiveItem('settings');
@@ -148,7 +148,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/projects'
+              to='/freelancer/projects'
               style={activeItem === 'projects' ? activeLinkStyle : {}}
             >
               <div className={design.Sidebar_tabs_inner}>
@@ -205,7 +205,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/earnings'
+              to='/freelancer/earnings'
               style={activeItem === 'earnings' ? activeLinkStyle2 : {}}
             >
               <div className={design.Sidebar_tabs_inner}>

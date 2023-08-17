@@ -4,8 +4,32 @@
 }
 
 .project_main {
-  padding: 50px 40px;
+  padding: 0px 0 50px 0px;
   flex-grow: 1;
   width: 80%;
   background: linear-gradient(to bottom right, #671ae4 20%, #181e41 90%);
 }
+
+.crd_1 {
+  background-color: #fff;
+  color: #2c1d6a;
+  padding: 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.come_soon {
+  margin: 5vw 10vw;
+}
+
+/* .come_soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+.come_soon h1 {
+  color: #ff9800;
+  letter-spacing: 2px;
+  font-size: 45px;
+} */
