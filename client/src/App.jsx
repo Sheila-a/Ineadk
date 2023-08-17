@@ -22,6 +22,8 @@ import Jobs from './pages/Dashboard/Company/Jobs/Jobs';
 import FreelanceSearchResults from './pages/Search/FreelanceSearchResults';
 import Message2 from './pages/Dashboard/Company/Support/Support';
 import PrivateRoutes from './routes/PrivateRoutes';
+import FreelancerSearchDetails from './pages/Details/FreelancerSearchDetails';
+import JobSearchDetails from './pages/Details/JobSearchDetasil';
 
 function App() {
   const { role } = useRole();
@@ -66,7 +68,11 @@ function App() {
           path='/search/freelancers'
           element={<FreelanceSearchResults searchQuery={searchQuery} />}
         />
-        <Route path='/user-details/:id' element={<FreelanceSearchResults />} />
+        <Route
+          path='/freelancer-details/:id'
+          element={<FreelancerSearchDetails />}
+        />
+        <Route path='/job-details/:id' element={<JobSearchDetails />} />
         {/* </Route> */}
       </Routes>
       <Footer />

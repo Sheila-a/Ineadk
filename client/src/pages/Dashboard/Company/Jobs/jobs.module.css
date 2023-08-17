@@ -12,7 +12,19 @@
 
 .job_flex {
   margin: 20px 40px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  flex-wrap: wrap;
+}
+
+@media (max-width: 973px) {
+  .job_flex {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .job_flex {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -4,17 +4,18 @@ import design from './fsd.module.css';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import CircularProgress from '@mui/material/CircularProgress';
 import Nav from '../../components/Navbar/Nav';
+import MetaBtn from '../../components/Button/MetaBtn';
 
-const FreelancerSearchDetails = () => {
+const JobSearchDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchFreelancerData = async () => {
+    const fetchJobData = async () => {
       try {
-        const response = await fetch('/src/data/freelancers.json');
+        const response = await fetch('/src/data/jobs.json'); // Adjust the path as needed
         // console.log(response);
         if (!response.ok) {
           throw new Error(
@@ -24,28 +25,28 @@ const FreelancerSearchDetails = () => {
 
         const data = await response.json();
         // console.log('All data:', data);
-        const selectedFreelancer = data.find(
-          (item) => item.id === parseInt(id, 10)
-        );
+        const selectedJob = data.find((item) => item.id === parseInt(id, 10));
         // console.log('Selected freelancer:', selectedFreelancer);
 
-        if (selectedFreelancer) {
+        if (selectedJob) {
           setTimeout(() => {
-            setUserDetails(selectedFreelancer);
+            setUserDetails(selectedJob);
             setIsLoading(false); // Set loading to false after the data is fetched
           }, 2000);
         } else {
-          alert('Freelancer not found');
+          alert('Job not found');
           setIsLoading(false);
         }
+        //   setLoading(false);
       } catch (error) {
         console.error('Error fetching freelancer data:', error);
         setIsLoading(false);
       }
     };
 
-    fetchFreelancerData();
+    fetchJobData();
   }, [id]);
+
   if (isLoading) {
     return (
       <div>
@@ -68,6 +69,21 @@ const FreelancerSearchDetails = () => {
     navigate(-1);
   };
 
+  const formattedName = `${userDetails.companyName}`.toLowerCase();
+
+  const months = Math.floor(userDetails.duration / 30);
+  const days = userDetails.duration % 30;
+  let durationText = '';
+  if (months > 0) {
+    durationText += `${months} ${months === 1 ? 'month' : 'months'}`;
+    if (days > 0) {
+      durationText += ` and `;
+    }
+  }
+  if (days > 0) {
+    durationText += `${days} ${days === 1 ? 'day' : 'days'}`;
+  }
+
   return (
     <div>
       <Nav />
@@ -77,54 +93,57 @@ const FreelancerSearchDetails = () => {
           <span>Go Back</span>
         </div>
         <div className={design.FSD_detail_card}>
-          <img src={userDetails.profilePicture} />
+          <img
+            src={`https://placehold.co/600x400?text=${userDetails.companyName}`}
+          />
           <div className={design.FSD_detail_right}>
             <div className={design.FSD_top}>
               <h2>Details</h2>
               <p>
                 <span>Name: </span>
-                {userDetails.firstName} {''}
-                {userDetails.lastName}
+                {userDetails.companyName}
               </p>
               <p>
                 <span>Email: </span>
-                {userDetails.email}
+                {`${formattedName}@gmail.com`}
               </p>
               <p>
                 <span>Job title: </span>
-                {userDetails.role}
+                {userDetails.jobTitle}
               </p>
               <p>
-                <span>Phone Number: </span>
-                {userDetails.phoneNumber}
+                <span>Cost: </span>${userDetails.prize}
               </p>
               <p>
-                <span>Total rating: </span>
-                {userDetails.totalRating}
-              </p>
-              <p>
-                <span>Billing rate: </span>${userDetails.Billing}
+                <span>Duration: {durationText}</span>
               </p>
             </div>
             <div className={design.FSD_bottom}>
               <h2>Other information</h2>
               <p>
                 <span>Github: </span>
-                {`github.com/${userDetails.firstName}${userDetails.lastName}`}
+                {`github.com/${formattedName}`}
               </p>
               <p>
                 <span>LinkedIn: </span>
-                {`linkedin.com/in/${userDetails.firstName}${userDetails.lastName}`}
+                {`linkedin.com/in/${formattedName}`}
               </p>
               <p>
                 <span>Website/Portfolio: </span>
-                {`${userDetails.firstName}${userDetails.lastName}.netlify.app/`}
+                {`${formattedName}.netlify.app/`}
               </p>
               <p>
                 <span>Twitter: </span>
-                {`twitter.com/${userDetails.firstName}${userDetails.lastName}`}
+                {`twitter.com/${formattedName}`}
               </p>
             </div>
+            <MetaBtn
+              content='Place Bid'
+              style={{
+                marginTop: '30px',
+                width: '100%',
+              }}
+            />
           </div>
         </div>
       </div>
@@ -132,4 +151,4 @@ const FreelancerSearchDetails = () => {
   );
 };
 
-export default FreelancerSearchDetails;
+export default JobSearchDetails;

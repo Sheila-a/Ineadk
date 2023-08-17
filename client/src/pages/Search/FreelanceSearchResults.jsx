@@ -3,14 +3,15 @@ import { useEffect, useState } from 'react';
 import SearchResultsRow from './SearchResultRow';
 import Nav from '../../components/Navbar/Nav';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import CircularProgress from '@mui/material/CircularProgress';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const FreelanceSearchResults = ({ searchQuery }) => {
   const [filteredFreelancers, setFilteredFreelancers] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchFreelancerData = async () => {
@@ -28,21 +29,24 @@ const FreelanceSearchResults = ({ searchQuery }) => {
           job.role.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
-        setFilteredFreelancers(filtered);
-        setLoading(false);
+        if (filtered) {
+          setTimeout(() => {
+            setFilteredFreelancers(filtered);
+            setIsLoading(false);
+          }, 3000);
+        } else {
+          console.error('Freelancer not found');
+          setIsLoading(false);
+        }
       } catch (error) {
         console.error('Error fetching freelancer data:', error);
         setError(error);
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
     fetchFreelancerData();
   }, [searchQuery]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   if (error) {
     return console.log(error.message);
@@ -51,6 +55,25 @@ const FreelanceSearchResults = ({ searchQuery }) => {
   const handleGoBack = () => {
     navigate(-1);
   };
+
+  if (isLoading) {
+    return (
+      <div>
+        <Nav />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <CircularProgress sx={{ color: '#ff9800' }} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <Nav />
@@ -62,20 +85,21 @@ const FreelanceSearchResults = ({ searchQuery }) => {
         <h2>
           Search Results for Freelancers: <span>{searchQuery}</span>{' '}
         </h2>
-        <div>
+        <div className={design.Search_comps}>
           {filteredFreelancers.map((result) => (
-            <SearchResultsRow
-              signature='freelance'
-              id={result.id}
-              key={result.id}
-              img={result.profilePicture}
-              rating={result.totalRating}
-              name={result.firstName + ' ' + result.lastName}
-              email={result.email}
-              role={result.role}
-              number={result.duration}
-              billing={result.Billing}
-            />
+            <Link to={`/usfreelancerer-details/${result.id}`} key={result.id}>
+              <SearchResultsRow
+                signature='freelance'
+                id={result.id}
+                img={result.profilePicture}
+                rating={result.totalRating}
+                name={result.firstName + ' ' + result.lastName}
+                email={result.email}
+                role={result.role}
+                number={result.duration}
+                billing={result.Billing}
+              />
+            </Link>
           ))}
         </div>
       </div>

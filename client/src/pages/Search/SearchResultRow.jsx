@@ -21,35 +21,38 @@ const SearchResultsRow = ({
 }) => {
   return (
     <div className={design.Search_row}>
-      <Link to={`/user-details/${id}`}>
-        <div>
-          {signature === 'freelance' ? (
-            <div className={design.FreeRow}>
-              <img src={img} />
-              <div>
-                <h2>{name}</h2>
-                <p>{email}</p>
-                <p>{role}</p>
-                <p>{number}</p>
-                <p>{rating}</p>
-                <p>${billing}</p>
-              </div>
+      {/* <Link to={`/user-details/${id}`}> */}
+      <div>
+        {signature === 'freelance' ? (
+          <div className={design.FreeRow}>
+            <img src={img} />
+            <div>
+              <h2>{name}</h2>
+              <p>{email}</p>
+              <p>{role}</p>
+              <p>{number}</p>
+              <p>{rating}</p>
+              <p>${billing}</p>
             </div>
-          ) : signature === 'jobs' ? (
-            <>
+          </div>
+        ) : signature === 'jobs' ? (
+          <div className={design.FreeRow}>
+            <img src={img} />
+            <div>
               <h2>{companyName}</h2>
               <p>{companyEmail}</p>
               <p>{jobTitle}</p>
               <p>{duration}</p>
               <p>${offering}</p>
-            </>
-          ) : (
-            <>
-              <h2>No result found</h2>
-            </>
-          )}
-        </div>
-      </Link>
+            </div>
+          </div>
+        ) : (
+          <>
+            <h2>No result found</h2>
+          </>
+        )}
+      </div>
+      {/* </Link> */}
     </div>
   );
 };
