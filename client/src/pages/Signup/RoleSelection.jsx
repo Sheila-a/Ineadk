@@ -36,8 +36,10 @@ const RoleSelection = () => {
             style={{ width: '100%' }}
           />
         </div>
-
-        <Link to='/'>Go back</Link>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '50px' }}>
+          <Link to='/'>Go back</Link>
+          <Link to='/login'> Login</Link>
+        </div>
       </div>
     </div>
   );

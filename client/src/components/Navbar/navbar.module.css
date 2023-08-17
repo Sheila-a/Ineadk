@@ -107,6 +107,16 @@
   gap: 10px;
 }
 
+.BT h3 {
+  color: #fff;
+}
+
+.BT img {
+  width: 50px;
+  background: #ff9800;
+  border-radius: 50%;
+}
+
 .BT a {
   /* border: 1px solid #fff; */
   border: 1px solid #671ae4;

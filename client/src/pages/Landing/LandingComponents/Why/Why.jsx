@@ -42,7 +42,7 @@ const Why = () => {
           <p>
             As a client, access a vast network of top-tier freelancers from
             around the globe. Talent knows no borders, and Gig Nexus enables you
-            to find the perfect match for your project's vision.
+            to find the perfect match for your project&apos;s vision.
           </p>
         </div>
         <div
@@ -71,12 +71,12 @@ const Why = () => {
         </div>
       </div>
       <p className={design.Summary} data-aos='zoom-in' data-aos-duration='1000'>
-        Whether you're a talented freelancer seeking autonomy or a client in
-        pursuit of top-tier expertise, Gig Nexus is the nexus of opportunity.
+        Whether you&apos;re a talented freelancer seeking autonomy or a client
+        in pursuit of top-tier expertise, Gig Nexus is the nexus of opportunity.
         Come together, break barriers, and redefine the future of freelancing
         with us. Embark on your journey with Gig Nexus today, where limitless
-        possibilities await. Together, we'll revolutionize freelancing and forge
-        a brighter future for all.
+        possibilities await. Together, we&apos;ll revolutionize freelancing and
+        forge a brighter future for all.
       </p>
       <div className={design.Why_flex_button}>
         <Button
@@ -84,7 +84,11 @@ const Why = () => {
           style={{ width: '100%' }}
           route='/role-selection'
         />
-        <Button content='Find Projects' style={{ width: '100%' }} />
+        <Button
+          content='Find Projects'
+          style={{ width: '100%' }}
+          route='/freelancer/dashboard'
+        />
         <Button content='Contact Us' style={{ width: '100%' }} />
       </div>
     </div>

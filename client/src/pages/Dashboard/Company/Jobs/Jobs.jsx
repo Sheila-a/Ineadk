@@ -3,9 +3,9 @@ import AddProject from '../../../../components/AddProject/AddProject';
 import DashIntro from '../../../../components/DashIntro/DashIntro';
 import DashNav from '../../../../components/DashNav/DashNav';
 import JobCard from '../../../../components/JobCard/JobCard';
-import Sidebar from '../../../../layout/Sidebar/ClientSidebar';
 import Modal from '../../../../components/Modal/Modal';
 import design from './jobs.module.css';
+import Sidebar from '../../../../layout/Sidebar/ClientSidebar';
 
 const Jobs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

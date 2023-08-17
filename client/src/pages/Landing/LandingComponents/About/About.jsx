@@ -8,18 +8,18 @@ const About = () => {
       <div data-aos='fade-up' data-aos-duration='1000'>
         <h1>About Us</h1>
         <p>
-          At Gig Nexus, we're pioneering a new era of freelancing – one that
-          leverages cutting-edge blockchain technology to create a decentralized
-          freelance marketplace like no other. Our mission is to empower
-          freelancers and clients with the tools and transparency needed to
-          forge fruitful partnerships and succeed in the ever-evolving gig
+          At Gig Nexus, we&apos;re pioneering a new era of freelancing – one
+          that leverages cutting-edge blockchain technology to create a
+          decentralized freelance marketplace like no other. Our mission is to
+          empower freelancers and clients with the tools and transparency needed
+          to forge fruitful partnerships and succeed in the ever-evolving gig
           economy.
         </p>
         <Button
           content='Get Started'
           style={{ marginTop: '30px', width: '100%' }}
           // route='/role-selection'
-          route='/dashboard'
+          route='/role-selection'
         />
       </div>
       <div data-aos='zoom-in' data-aos-duration='1000'>

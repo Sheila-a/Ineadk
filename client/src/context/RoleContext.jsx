@@ -18,14 +18,19 @@ export function RoleProvider({ children }) {
   const [auth, setAuth] = useState(getInitialState);
 
   // useEffect(() => {
-  //   sessionStorage.setItem('userAuth', JSON.stringify(auth));
-  // }, [auth]);
+  //   const storedUserDetails = localStorage.getItem('userDetails');
+  //   if (storedUserDetails) {
+  //     setUser(JSON.parse(storedUserDetails));
+  //   }
+  // }, []);
+
   useEffect(() => {
-    const storedUserDetails = localStorage.getItem('userDetails');
-    if (storedUserDetails) {
-      setUser(JSON.parse(storedUserDetails));
-    }
-  }, []);
+    // Store user details including auth property in localStorage
+    localStorage.setItem('userDetails', JSON.stringify(user));
+
+    // Store auth property in sessionStorage
+    sessionStorage.setItem('userAuth', JSON.stringify(auth));
+  }, [user, auth]);
 
   return (
     <RoleContext.Provider

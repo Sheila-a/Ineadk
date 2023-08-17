@@ -13,16 +13,17 @@ import MenuOpenOutlinedIcon from '@mui/icons-material/MenuOpenOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 const Sidebar = () => {
-  const reloadPage = () => {
-    window.location.reload();
-  };
+  const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
   const [isPermanent, setIsPermanent] = useState(false);
   const location = useLocation();
+  const reloadPage = () => {
+    navigate('/');
+  };
 
   //Logout Functionality
-  const navigate = useNavigate();
+
   const handleLogout = () => {
     sessionStorage.clear();
     navigate('/login');

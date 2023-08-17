@@ -13,16 +13,16 @@ import MenuOpenOutlinedIcon from '@mui/icons-material/MenuOpenOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 const Sidebar = () => {
-  const reloadPage = () => {
-    window.location.reload();
-  };
+  const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
   const [isPermanent, setIsPermanent] = useState(false);
   const location = useLocation();
-
+  const reloadPage = () => {
+    navigate('/');
+  };
   //Logout Functionality
-  const navigate = useNavigate();
+
   const handleLogout = () => {
     sessionStorage.clear();
     navigate('/login');
@@ -62,13 +62,13 @@ const Sidebar = () => {
       setActiveItem('jobs');
     } else if (location.pathname === '/company/message') {
       setActiveItem('message');
-    } else if (location.pathname === '/profile') {
+    } else if (location.pathname === '/company/profile') {
       setActiveItem('profile');
     } else if (location.pathname === '/company/support') {
       setActiveItem('support');
-    } else if (location.pathname === '/payments') {
+    } else if (location.pathname === '/company/payments') {
       setActiveItem('payments');
-    } else if (location.pathname === '/settings') {
+    } else if (location.pathname === '/company/settings') {
       setActiveItem('settings');
     }
   }, [location]);
@@ -205,7 +205,7 @@ const Sidebar = () => {
           <div>
             <Link
               className={design.Sidebar_tabs}
-              to='/payments'
+              to='/company/payments'
               style={activeItem === 'payments' ? activeLinkStyle2 : {}}
             >
               <div className={design.Sidebar_tabs_inner}>

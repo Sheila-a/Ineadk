@@ -1,12 +1,11 @@
 import design from './profileCard.module.css';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import { useRole } from '../../context/RoleContext';
-import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const ProfileCard = ({ currentAddress }) => {
   const { user } = useRole();
@@ -70,4 +69,7 @@ const ProfileCard = ({ currentAddress }) => {
   );
 };
 
+ProfileCard.propTypes = {
+  currentAddress: PropTypes.object,
+};
 export default ProfileCard;

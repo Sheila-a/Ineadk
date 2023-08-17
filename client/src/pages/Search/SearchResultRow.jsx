@@ -1,10 +1,8 @@
 // import { useNavigate } from 'react-router-dom';
 import design from './search.module.css';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 const SearchResultsRow = ({
-  id,
   name,
   email,
   billing,

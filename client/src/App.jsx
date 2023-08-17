@@ -1,11 +1,5 @@
 import './App.css';
-import {
-  Routes,
-  Route,
-  useParams,
-  Navigate,
-  useLocation,
-} from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Landing } from './pages/Landing/Landing';
 import Login from './pages/Login/Login';
 import RoleSelection from './pages/Signup/RoleSelection';
@@ -19,7 +13,6 @@ import Profile from './pages/Dashboard/Freelancer/Profile/Profile';
 import Support from './pages/Dashboard/Freelancer/Messages/Support';
 import Earnings from './pages/Dashboard/Freelancer/Earnings/Earnings';
 import Settings from './pages/Dashboard/Freelancer/Settings/Settings';
-import { useRole } from './context/RoleContext';
 import Dashboard2 from './pages/Dashboard/Company/Home/Dashboard2';
 import JobSearchResults from './pages/Search/JobSearchResults';
 import { useEffect } from 'react';
@@ -29,9 +22,12 @@ import Message2 from './pages/Dashboard/Company/Support/Support';
 // import PrivateRoutes from './routes/PrivateRoutes';
 import FreelancerSearchDetails from './pages/Details/FreelancerSearchDetails';
 import JobSearchDetails from './pages/Details/JobSearchDetasil';
+import Support3 from './pages/Dashboard/Company/Messages/Support';
+import Profile2 from './pages/Dashboard/Company/Profile/Profile';
+import Settings2 from './pages/Dashboard/Company/Settings/Settings';
+import Payments from './pages/Dashboard/Company/Payment/Payments';
 
 function App() {
-  const { role } = useRole();
   const location = useLocation();
   const searchQuery = new URLSearchParams(location.search).get('query');
 
@@ -47,6 +43,7 @@ function App() {
         <Route path='/role-selection' element={<RoleSelection />} />
         <Route path='/signup/freelancer' element={<FreelancerSignUp />} />
         <Route path='/signup/company' element={<CompanySignUp />} />
+        {/*  */}
         {/* <FREELANCER>  </FREELANCER> */}
         {/* <Route path='/' element={<PrivateRoutes />}> */}
         <Route path='/freelancer/dashboard' element={<Dashboard />} />
@@ -61,11 +58,15 @@ function App() {
         <Route path='/freelancer/settings' element={<Settings />} />
         <Route path='/freelancer/message' element={<Support />} />
         {/* </FREELANCER> */}
+        {/*  */}
         {/* CLIENT */}
         <Route path='/company/dashboard' element={<Dashboard2 />} />
         <Route path='/company/jobs' element={<Jobs />} />
         <Route path='/company/support' element={<Message2 />} />{' '}
-        <Route path='/company/message' element={<Message />} />{' '}
+        <Route path='/company/message' element={<Support3 />} />{' '}
+        <Route path='/company/profile' element={<Profile2 />} />{' '}
+        <Route path='/company/payments' element={<Payments />} />{' '}
+        <Route path='/company/settings' element={<Settings2 />} />{' '}
         <Route
           path='/search/freelancers'
           element={<FreelanceSearchResults searchQuery={searchQuery} />}
