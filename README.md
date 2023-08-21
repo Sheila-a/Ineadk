@@ -5,27 +5,19 @@ The Gig Nexus App is a platform that connects freelancers and companies, allowin
 
 ## Features
 ### Current Features
-* User Authentication: Freelancers and companies can create accounts and log in securely.
-* MetaMask Integration: Users can connect their MetaMask wallets to their accounts for secure transactions.
-* Booking System: Companies can initiate bookings with freelancers, specifying project details and payment terms.
-* Freelancer Profiles: Freelancers can create detailed profiles showcasing their skills, experience, and portfolio.
+- **User Registration:** Freelancers and companies can easily create accounts using their email addresses, enabling them to access the platform's features.
+
+- **MetaMask Integration:** The app integrates with MetaMask, a popular Ethereum wallet, allowing users to securely connect their wallets for transactions.
+
+- **Booking a Freelancer:** Companies can initiate bookings by providing project details and making payments through MetaMask. This ensures secure and transparent transactions.
+- **Freelancer Profiles:** Freelancers can create detailed profiles showcasing their skills, experience, and portfolio.
 
 ### Planned Features
 * Company Listings: Companies can create listings specifying the skills and experience they require for projects.
 * Messaging System: Users can communicate within the app to discuss project details.
 * Payment Integration: Secure payment processing for project bookings.
 
-Sure, here's a sample README file based on the information you provided. Please customize it according to your project's specifics:
-
 ---
-
-## Features
-
-- **User Registration:** Freelancers and companies can easily create accounts using their email addresses, enabling them to access the platform's features.
-
-- **MetaMask Integration:** The app integrates with MetaMask, a popular Ethereum wallet, allowing users to securely connect their wallets for transactions.
-
-- **Booking a Freelancer:** Companies can initiate bookings by providing project details and making payments through MetaMask. This ensures secure and transparent transactions.
 
 ## Usage
 
@@ -43,8 +35,6 @@ The Gig Nexus App's smart contract is deployed on Linea, a blockchain platform. 
 
 
 ---
-
-Make sure to replace placeholders like `your-username`, `contract-link-on-linea`, and update the file names if necessary. Additionally, consider adding more sections like "Installation", "Dependencies", "Known Issues", and "Support" as needed for your project.
 
 ## Getting Started
 ### Prerequisites
@@ -85,7 +75,7 @@ Contributions are welcome! If you'd like to contribute to the development of the
 
 1. **Fork the Repository:** Click the "Fork" button at the top right of this repository.
 
-2. **Clone Your Fork:** Clone the repository to your local machine using `git clone https://github.com/your-username/gig-nexus-app.git`.
+2. **Clone Your Fork:** Clone the repository to your local machine using `git clone https://github.com/Sheila-a/gig-nexus-app.git`.
 
 3. **Create a New Branch:** Create a new branch for your feature using `git checkout -b feature-name`.
 
