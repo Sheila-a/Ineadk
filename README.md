@@ -37,11 +37,9 @@ To use the Gig Nexus App, follow these steps:
 
 3. **Booking a Freelancer:** As a company, you can initiate bookings by specifying project details and making payments through MetaMask.
 
-For detailed usage instructions, examples, and tips, please refer to the [User Guide](user-guide.md) provided in this repository.
-
 ## Smart Contract Deployment
 
-The Gig Nexus App's smart contract is deployed on Linea, a blockchain platform. This contract ensures secure and transparent transactions between users. You can interact with the contract on Linea's blockchain explorer at [contract-link-on-linea](https://example.com/contract-link-on-linea).
+The Gig Nexus App's smart contract is deployed on Linea, a blockchain platform. This contract ensures secure and transparent transactions between users. You can interact with the contract on Linea's blockchain explorer.
 
 
 ---
