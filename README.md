@@ -39,7 +39,7 @@ To use the Gig Nexus App, follow these steps:
 
 ## Smart Contract Deployment
 
-The Gig Nexus App's smart contract is deployed on Linea, a blockchain platform. This contract ensures secure and transparent transactions between users. You can interact with the contract on Linea's blockchain explorer.
+The Gig Nexus App's smart contract is deployed on Linea, a blockchain platform. This contract ensures secure and transparent transactions between users. You can interact with the contract on Linea's blockchain explorer at contract-link-on-linea.
 
 
 ---
