@@ -1,0 +1,16 @@
+.connectBtn {
+  background-color: #bed7fa;
+  padding: 7px 15px;
+  border: 2px solid #bed7fa;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0c4592;
+  cursor: pointer;
+}
+
+.connectBtn:hover {
+  background-color: #fff;
+  transition: 0.4s ease;
+}
