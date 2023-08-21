@@ -80,9 +80,6 @@ Before you begin, ensure you have met the following requirements:
 `npx hardhat run scripts/deploy.js --network linea`
 
 ---
-Certainly! Here's the continuation of your README with the "Contributing" and "License" sections:
-
----
 
 ## Contributing
 
